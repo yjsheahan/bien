@@ -1,8 +1,26 @@
-<%= form_for @review do |f| %>
+<%= form_for @review, data: { turbo: false } do |f| %>
+
+    <% if @review.errors.any? %>
+        <div class="errors">
+            <% @review.errors.full_messages.each do |message| %>
+                <p><%= message %></p>
+            <% end %>
+        </div>
+    <% end %>
 
     <p>
         <%= f.label :title %>
         <%= f.text_field :title %>
+    </p>
+
+    <p>
+        <%= f.label :restaurant %>
+        <%= f.text_field :restaurant %>
+    </p>
+
+    <p>
+        <%= f.label :cuisine %>
+        <%= f.text_field :cuisine %>
     </p>
 
     <p>
@@ -13,6 +31,16 @@
     <p>
         <%= f.label :score %>
         <%= f.text_field :score %>
+    </p>
+
+    <p>
+        <%= f.label :ambiance %>
+        <%= f.text_field :ambiance %>
+    </p>
+
+    <p>
+        <%= f.label :price %>
+        <%= f.text_field :price %>
     </p>
 
     <%= f.submit "Submit review" %>

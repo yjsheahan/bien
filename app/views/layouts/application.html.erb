@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bien - Restaurant Reviews</title>
+    <title><%= content_for :page_title %> - Bien - Restaurant Reviews</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -17,13 +17,15 @@
           <%= image_tag "bien-logo.svg" %>
         <% end %>
       </h1>
-      <h2>The collective reading record</h2>
+      <h2>The Place for Restaurant Reviews</h2>
       <nav>
       <%= link_to "Add a review", new_review_path %>
       </nav>
     </header>
 
-    <%= yield %>
+    <main>
+      <%= yield %>
+    </main>
 
     <footer>
       <p>Copyright Bien London 2022</p>
