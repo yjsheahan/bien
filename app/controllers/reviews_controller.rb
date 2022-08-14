@@ -3,6 +3,22 @@ class ReviewsController < ApplicationController
     def index
         # this is our list page for our reviews
 
+        @price = params[:price]
+        @cuisine = params[:cuisine]
+
+        # start with all reviews
+        @reviews = Review.all
+
+        # filtering by price
+        if @price.present?
+            @reviews = @reviews.where(price: @price)
+        end
+
+        # filtering by cuisine
+        if @cuisine.present?
+            @reviews = @reviews.where(cuisine: @cuisine)
+        end
+
         @number = rand(1..1000)
 
         @reviews = Review.all

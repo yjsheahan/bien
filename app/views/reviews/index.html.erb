@@ -1,5 +1,16 @@
 <p>I can't wait until I have <%= @number %> reviews!</p>
 
+<nav class="filters">
+    <%= link_to "All prices", root_path %>
+    <%= link_to "$", root_path(price: 1, cuisine: @cuisine) %>
+    <%= link_to "$$", root_path(price: 2, cuisine: @cuisine) %>
+    <%= link_to "$$$", root_path(price: 3, cuisine: @cuisine) %>
+
+    <%= link_to "Indian", root_path(cuisine: "Indian", price: @price) %>
+    <%= link_to "Mexican", root_path(cuisine: "Mexican", price: @price) %>
+    <%= link_to "American", root_path(cuisine: "American", price: @price) %>
+</nav>
+
 <!-- Loop through reviews -->
 <% @reviews.each do |review| %>
     <div class="review">
