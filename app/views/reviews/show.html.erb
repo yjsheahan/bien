@@ -22,6 +22,10 @@
     <%= simple_format @review.body %>
 </div>
 
+<div class="address">
+    <%= @review.address %>
+</div>
+
 <div class="actions">
     <%= link_to "Edit review", edit_review_path(@review) %>
     <%= button_to "Delete this review", review_path(@review), method: :delete, onclick: "return confirm('Are you sure?')" %>

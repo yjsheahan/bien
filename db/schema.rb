@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_12_092951) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_14_150719) do
   create_table "reviews", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -22,6 +22,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_12_092951) do
     t.datetime "updated_at", null: false
     t.string "phone_number"
     t.string "ambiance"
+    t.text "address"
+    t.float "longitude"
+    t.float "latitude"
   end
 
 end
