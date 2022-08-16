@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
 
         @price = params[:price]
         @cuisine = params[:cuisine]
-        @location = params[:location]
+        @address = params[:address]
 
         # start with all reviews
         @reviews = Review.all
@@ -21,8 +21,8 @@ class ReviewsController < ApplicationController
         end
 
         # search near location
-        if @location.present?
-            @reviews = @reviews.near(@location)
+        if @address.present?
+            @reviews = @reviews.near(@address)
         end
 
         @number = rand(1..1000)
